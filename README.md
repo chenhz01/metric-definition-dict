@@ -2,6 +2,8 @@
 
 A validator and conflict detector for metric definition dictionaries. Each metric declares its id, kind, numerator, denominator and time window in one JSON file; the tool checks the schema and flags two entries that quietly disagree about what the same metric means. Pure standard library, single file, offline. *No direct equivalent found as of 2026-10-13.*
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 Most teams define metrics in three places at once: dashboards, dbt models, and a wiki page nobody updates. When "revenue" is `sum(amount)` over 30 days in one tool and `sum(amount_paid)` over a calendar month in another, every number downstream disagrees — and the disagreement is discovered in a meeting, not in CI. The root cause is that a metric definition has no canonical, lintable artifact.
